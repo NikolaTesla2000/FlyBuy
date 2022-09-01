@@ -1,0 +1,47 @@
+{% load static %}
+{% load cart_template_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Lobster&display=swap" rel="stylesheet"/>
+    <title>About us</title>
+  </head>
+  <body>
+    <main>
+      <section class="landing">
+        <nav>
+           <a class="navbar-brand waves-effect" href="{% url 'home' %}">
+              <h1 id="logo" style="color:white;">FlyBuy</h1>
+           </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+        <h2 class="big-text" style="color: white;">Always in style!</h2>
+      </section>
+    </main>
+    <div class="intro">
+      <div class="intro-text">
+        <h1 class="hide">
+          <span class="text">Find it</span>
+        </h1>
+        <h1 class="hide">
+          <span class="text">Love it</span>
+        </h1>
+        <h1 class="hide">
+          <span class="text">Buy it.</span>
+        </h1>
+      </div>
+    </div>
+    <div class="slider"></div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'js/app.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load account socialaccount %}
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/style1.css' %}" />
+</head>
+
+<body>
+  <main>
+    <section class="glass">
+      <div class="dashboard">
+        <div class="user">
+          <h3>FLYBUY</h3>
+        </div>
+      </div>
+      <div class="games">
+        <div class="status">
+          <center>
+            <p> </p>
+            <h1>{% trans "Sign Up" %}</h1>
+            <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+          </center>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+              {% csrf_token %}
+              {{ form| crispy}}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}
+              <center><button class="btn btn-info  rounded" type="submit">{% trans "Sign Up" %} &raquo;</button></center>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+  <div class="circle1"></div>
+  <div class="circle2"></div>
+</body>
+
+</html>
+{% endblock content %}
